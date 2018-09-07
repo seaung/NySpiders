@@ -7,14 +7,14 @@ class Urls(object):
         self.old_urls = set()
 
     def add_new_url(self, url):
-        if url is None:
+        if url:
             return
 
         if not url in self.new_urls and not url in self.old_urls:
             self.new_urls.add(url)
 
     def add_new_urls(self, urls):
-        if len(urls) == 0:
+        if len(urls):
             return
 
         for url in urls:

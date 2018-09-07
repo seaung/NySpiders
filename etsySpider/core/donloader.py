@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import urllib.request
+import urllib.parse
 import requests
 from requests.exceptions import RequestException
 
@@ -13,4 +15,7 @@ class Downloader(object):
         except RequestException as e:
             print('[(*)] requests exception %s ' % (e, ))
             return None
+
+    def tools_download(self, url, headers):
+        pass
 
