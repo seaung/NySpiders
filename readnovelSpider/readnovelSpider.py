@@ -1,3 +1,4 @@
+import json
 import asyncio
 from pprint import pprint
 from urllib.parse import urljoin
@@ -14,6 +15,16 @@ async def fetch(session, url):
     '''
     async with session.get(url) as resq:
         return await resq.text()
+
+
+'''
+async def save_to_json(data):
+    '''
+       :data: extract page data
+    '''
+    with open('readonvel.json', 'a') as fs:
+        fs.write(json.dumps(data, ensure_ascii=False))
+'''
 
 
 async def parse_page(response):
